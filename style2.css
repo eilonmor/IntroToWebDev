@@ -1,0 +1,156 @@
+.site{
+    width: 100%;
+    height: 100%;
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 2fr; /*grid-gap:10px;*/
+    grid-template-rows: 1fr 2fr 5fr 1fr;
+    grid-template-areas: "header header header"
+                         "sidebar main main"
+                         "sidebar main main"
+                         "footer footer footer"   ;
+}
+p{
+    color: white;
+}
+h3{
+    color: white;
+}
+h5{
+    color: white;
+}
+label{
+    color: white;
+}
+.mastheader{background-color: black; grid-area:header;}
+.page-title{background:black; grid-area:title;}
+.main-content{
+  background:#383838; grid-area:main; min-height:500px; overflow: auto;
+}
+.sidebar{background:black; grid-area:sidebar; }
+.footer{background:black; grid-area:footer;}
+#leftside{
+    text-align: left;
+}
+header{
+     text-align: left;
+}
+
+#center {
+    overflow: scroll;
+    width:100%;
+    height: 50px;
+}
+#side{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "a"
+                         "b"
+                         "c"
+                         "d"
+                         "e"
+                         "f"
+                         "g"
+                         "h";
+}
+.A{background-color: white; grid-area:a;}
+.B{background-color: coral; grid-area:b;}
+.C{background-color: white; grid-area:c;}
+.D{background-color: coral; grid-area:d;}
+.E{background-color: white; grid-area:e;}
+.F{background-color: coral; grid-area:f;}
+.G{background-color: white; grid-area:g;}
+.H{background-color: coral; grid-area:h;}
+
+.sidenav {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  gap: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+ul.demo {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+width: 70%;
+height: 90%;
+margin-top: 250px;
+padding: 25px;
+}
+
+.smallbox{
+width: 95;
+height: 25%;
+margin: 10px;
+padding: 10px;
+border: 2px solid #e1785a;
+}
+label{
+    width: auto;
+    padding: 10px
+}
+input{
+    width: 30%;
+    border-radius: 15px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
